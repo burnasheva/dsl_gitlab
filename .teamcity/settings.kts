@@ -93,7 +93,7 @@ object CloudPublic : Project({
     features {
         gitlabIssues {
             id = "PROJECT_EXT_267"
-            displayName = "public project"
+            displayName = "public project (change in name)"
             repositoryURL = "https://gitlab.com/n.burnasheva/mvn2-spring-openjpa"
             authType = accessToken {
                 accessToken = "credentialsJSON:2e407222-ca07-486c-ae9d-3a878bea3f45"
