@@ -36,14 +36,15 @@ project {
     vcsRoot(Cloud_HttpsGitlabComNBurnashevaMvn2springOpenjpaGitRefsHeadsMaster)
     vcsRoot(HttpsGitlabComNBurnashevaMvn2springOpenjpaGitRefsHeadsMaster1)
 
-    buildType(RunTests)
+    buildType(RunTests_2)
 
     subProject(Cloud)
     subProject(CloudPublic)
     subProject(Hosted)
 }
 
-object RunTests : BuildType({
+object RunTests_2 : BuildType({
+    id("RunTests")
     name = "run tests"
 
     vcs {
@@ -168,6 +169,12 @@ object Hosted : Project({
             serverUrl = "http://10.128.93.61/"
             applicationId = "6deb01a38814457ecb606f2558e668b6eadfe3f24ceff7155da9f1efd8d33d13"
             clientSecret = "credentialsJSON:ddadcc19-7637-415c-932c-495e87899cc2"
+        }
+        gitlabIssues {
+            id = "PROJECT_EXT_274"
+            displayName = "Local server"
+            repositoryURL = "http://10.128.93.61/kilina/nomaster"
+            authType = anonymous()
         }
     }
 })
