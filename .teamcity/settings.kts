@@ -32,17 +32,45 @@ version = "2021.2"
 project {
 
     vcsRoot(Cloud_HttpsGitlabComNBurnashevaMvn2springOpenjpaGitRefsHeadsMaster)
+    vcsRoot(HttpsGitlabComNBurnashevaMvn2springOpenjpaGitRefsHeadsMaster1)
+
+    buildType(RunTests)
 
     subProject(Cloud)
     subProject(CloudPublic)
     subProject(Hosted)
 }
 
+object RunTests : BuildType({
+    name = "run tests"
+
+    vcs {
+        root(HttpsGitlabComNBurnashevaMvn2springOpenjpaGitRefsHeadsMaster1)
+    }
+
+    triggers {
+        vcs {
+        }
+    }
+})
+
 object Cloud_HttpsGitlabComNBurnashevaMvn2springOpenjpaGitRefsHeadsMaster : GitVcsRoot({
     name = "https://gitlab.com/n.burnasheva/mvn2-spring-openjpa.git#refs/heads/master"
     url = "https://gitlab.com/n.burnasheva/mvn2-spring-openjpa.git"
     branch = "refs/heads/master"
     branchSpec = "refs/heads/*"
+})
+
+object HttpsGitlabComNBurnashevaMvn2springOpenjpaGitRefsHeadsMaster1 : GitVcsRoot({
+    name = "https://gitlab.com/n.burnasheva/mvn2-spring-openjpa.git#refs/heads/master (1)"
+    url = "https://gitlab.com/n.burnasheva/mvn2-spring-openjpa.git"
+    branch = "refs/heads/master"
+    branchSpec = "refs/heads/*"
+    authMethod = password {
+        userName = "n.burnasheva"
+        password = ""
+    }
+    param("oauthProviderId", "PROJECT_EXT_144")
 })
 
 
