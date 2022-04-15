@@ -62,6 +62,12 @@ object Cloud : Project({
                 accessToken = "credentialsJSON:2e407222-ca07-486c-ae9d-3a878bea3f45"
             }
         }
+        gitlabIssues {
+            id = "PROJECT_EXT_268"
+            displayName = "Project without Authentication"
+            repositoryURL = "https://gitlab.com/n.burnasheva/mvn2-spring-openjpa"
+            authType = anonymous()
+        }
     }
 })
 
