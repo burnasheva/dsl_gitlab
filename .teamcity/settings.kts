@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildFeatures.pullRequests
+import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.projectFeatures.gitlabEEConnection
 import jetbrains.buildServer.configs.kotlin.projectFeatures.gitlabIssues
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
@@ -46,6 +47,13 @@ object RunTests : BuildType({
 
     vcs {
         root(HttpsGitlabComNBurnashevaMvn2springOpenjpaGitRefsHeadsMaster1)
+    }
+
+    steps {
+        maven {
+            goals = "clean test"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+        }
     }
 
     triggers {
