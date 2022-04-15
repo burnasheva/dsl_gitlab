@@ -2,7 +2,6 @@ package patches.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.BuildType
-import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.ui.*
 
 /*
@@ -16,11 +15,6 @@ create(RelativeId("Hosted"), BuildType({
 
     vcs {
         root(RelativeId("Hosted_Http101289361kilinaNomasterGitRefsHeadsDevelop"))
-    }
-
-    triggers {
-        vcs {
-        }
     }
 }))
 
