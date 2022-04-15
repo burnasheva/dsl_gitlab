@@ -62,12 +62,6 @@ object Cloud : Project({
                 accessToken = "credentialsJSON:2e407222-ca07-486c-ae9d-3a878bea3f45"
             }
         }
-        gitlabIssues {
-            id = "PROJECT_EXT_271"
-            displayName = "n.burnasheva/Simple.Project.dot.com"
-            repositoryURL = "https://gitlab.com/n.burnasheva/Simple.Project.dot.com"
-            authType = anonymous()
-        }
     }
 })
 
