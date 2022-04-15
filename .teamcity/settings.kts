@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildFeatures.parallelTests
 import jetbrains.buildServer.configs.kotlin.buildFeatures.pullRequests
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.projectFeatures.gitlabEEConnection
@@ -58,6 +59,12 @@ object RunTests : BuildType({
 
     triggers {
         vcs {
+        }
+    }
+
+    features {
+        parallelTests {
+            numberOfBatches = 2
         }
     }
 })
