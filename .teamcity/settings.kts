@@ -37,15 +37,6 @@ project {
 
     buildType(RunTests)
 
-    features {
-        gitlabIssues {
-            id = "PROJECT_EXT_272"
-            displayName = "n.burnasheva/mvn2-spring-openjpa"
-            repositoryURL = "https://gitlab.com/n.burnasheva/mvn2-spring-openjpa"
-            authType = anonymous()
-        }
-    }
-
     subProject(Cloud)
     subProject(CloudPublic)
     subProject(Hosted)
