@@ -10,6 +10,11 @@ To apply the patch, change the buildType with id = 'Hosted_Build'
 accordingly, and delete the patch script.
 */
 changeBuildType(RelativeId("Hosted_Build")) {
+    check(publishArtifacts == PublishMode.NORMALLY_FINISHED) {
+        "Unexpected option value: publishArtifacts = $publishArtifacts"
+    }
+    publishArtifacts = PublishMode.SUCCESSFUL
+
     triggers {
         remove {
             vcs {
