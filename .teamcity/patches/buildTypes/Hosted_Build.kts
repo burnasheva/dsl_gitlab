@@ -10,6 +10,14 @@ To apply the patch, change the buildType with id = 'Hosted_Build'
 accordingly, and delete the patch script.
 */
 changeBuildType(RelativeId("Hosted_Build")) {
+    vcs {
+
+        check(cleanCheckout == false) {
+            "Unexpected option value: cleanCheckout = $cleanCheckout"
+        }
+        cleanCheckout = true
+    }
+
     triggers {
         remove {
             vcs {
